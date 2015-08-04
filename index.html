@@ -15,7 +15,8 @@
       <input type="button" value="Agregar" ng-click="pensamientos.push(nuevoPensamiento); nuevoPensamiento = '';">
     </p>
     <h2>Pensamiento que has tenido</h2>
-    <p ng-repeat="pensamiento in pensamientos" ng-init="paso = $index">
+    <label>Search: <input ng-model="searchText"></label>
+    <p ng-repeat="pensamiento in pensamientos | filter:searchText" ng-init="paso = $index">
       Pensaste esto: {{pensamiento}} (Iteración con índice {{paso}})
     </p>
   </div>
